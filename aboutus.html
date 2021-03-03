@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>About Cinema Scope</title>
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Bradley Deeming">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		
+		<style>
+		
+			@media screen and ( max-width: 550px ) {
+				img.responsive { 
+					width: 100%; 
+				}
+			}
+			@media screen and ( min-width: 549px ) {
+				img.responsive { 
+					width: 50%;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;
+				}
+			}
+		
+		</style>
+		
+	</head>
+
+	<body>
+	
+	<div class="topnav" id="myTopnav">
+	  <a href="index.html">Home</a>
+	  <a href="aboutus.html" class="active">About Us</a>
+	  <a href="contactus.html">Contact Us</a>
+	  <div class="dropdown">
+		<button class="dropbtn">Films & Times 
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+          <a href="#adult">Films for Adults</a>
+          <a href="#child">Films for Children</a>
+          <a href="#family">Films for Families</a>
+		</div>
+	  </div> 
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	</div>
+
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+		x.className += " responsive";
+	  } else {
+		x.className = "topnav";
+	  }
+	}
+	</script>
+	
+	<h1>About Us</h1>
+	
+	<div id="container">
+		<div class="column">
+			<p>We are Cinema Scope, we are a small independant theatre company, we show brand new and older films a like, with our small lovely, kind and caring staff team we off some of the best tickets at the best prices. We have 5 Cinemas dotted around the country in all of your favourite cities, London, Birmingham, Manchester, Leeds and Lichfield. We can't be beaten on price and provide high quality movies, we hope you choose us!</p>
+		</div>
+		
+		<div class="column">
+			<p>All of our Cinemas have High quality seats, as well as free popcorn, and a bring your own food poilcy (YOU CAN!) We want you to enjoy movies like we do, we enjoy ourselves watching movies, we believe that you should do the same, what reason do you have to not pick us. We provide free food upon buying your tickets at the enteracne to the cinema! We hope that you enjoy your time spent with us and we will enjoy our time with you!</p>
+		</div>
+	</div>
+	
+	<img src="images\aboutus.jpg" class="responsive">
+		
+	<footer>&copy Bradley Deeming 2021</footer>
+	
+	</body>
+	
+	
+	
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Cinema Scope Home Page</title>
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Bradley Deeming">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+
+	<body>
+	
+	<div class="topnav" id="myTopnav">
+	  <a href="index.html"class="active">Home</a>
+	  <a href="aboutus.html">About Us</a>
+	  <a href="contactus.html">Contact Us</a>
+	  <div class="dropdown">
+		<button class="dropbtn">Films & Times 
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+          <a href="#adult">Films for Adults</a>
+          <a href="#child">Films for Children</a>
+          <a href="#family">Films for Families</a>
+		</div>
+	  </div> 
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	</div>
+
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+		x.className += " responsive";
+	  } else {
+		x.className = "topnav";
+	  }
+	}
+	</script>
+	
+	<h1>Cinema Scope</h1>
+	
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="images/slideshow1.jpg" style="width:100%">
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="images/slideshow2.jpg" style="width:100%">
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="images/slideshow3.jfif" style="width:100%">
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+		</script>
+		
+		<div class="container">
+			<div class="column">
+				<p>Hello We are Cinema Scope, we are a small independent company who have been established for 5 years. We currently have 5 cinemas across the country that show a variety of films, most of which are new. As well as this, we sometimes run film festivals which show a variety of older and contemporary movies. In this website you will find a variety of pages as well as a contact us form, here you can directly message us and we will assist you with all of your movie needing requirements.</p>
+			</div>
+			<div class="column">
+				<p>We also have a number of other pages including our about us page, and out film advertisement page, please take your time to look around some of our pages, you may also use our contact us page to input comments and how you think our webpage is, some changes that should be made and maybe some features that you think should be added. Come down to one of our 5 premium cinemas but before you do that please enjoy your time in this website, with love from the Cinema Scope Staff team!</p>
+			</div>
+		</div>
+		
+		<footer>&copy Bradley Deeming 2021</footer>
+	
+	</body>
+	
+	
+	
+</html>

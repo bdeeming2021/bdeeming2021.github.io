@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Bradley Deeming">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		
+		<style>
+		
+			#errorMessage {
+				color:red;
+				font-size:90% !important;
+			}
+			
+			#successMessage {
+				color:green;
+				font-size:90% !important;
+				display: none;
+				margin-bottom: 20px;
+			}
+			
+			@media screen and ( max-width: 550px ) {
+				img.responsive { 
+					width: 100%; 
+				}
+			}
+			@media screen and ( min-width: 549px ) {
+				img.responsive { 
+					width: 50%;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;
+				}
+			}
+			
+		</style>
+		
+	</head>
+
+	<body>
+	
+	<div class="topnav" id="myTopnav">
+	  <a href="index.html">Home</a>
+	  <a href="aboutus.html">About Us</a>
+	  <a href="contactus.html" class="active">Contact Us</a>
+	  <div class="dropdown">
+		<button class="dropbtn">Films & Times 
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+          <a href="#adult">Films for Adults</a>
+          <a href="#child">Films for Children</a>
+          <a href="#family">Films for Families</a>
+		</div>
+	  </div> 
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	</div>
+
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+		x.className += " responsive";
+	  } else {
+		x.className = "topnav";
+	  }
+	}
+	</script>
+	
+	<h1>Contact Us!</h1>
+	
+		<div id="wrapper" style="width: 100%; padding: 0 15px; box-sizing: border-box; float: left; background-color: #C2A7A7;">
+		
+			<p> If you would like to get in contact with us please fill out the form bellow, be sure to enter everything corractly, we will attempt to get back to you as soon as possible through the Email that you use when filling in this form!</p>
+	
+			<div id="successMessage">Form successfully validated, we will be back with you via email as soon as possible!</div>
+			
+			<div id="errorMessage"></div>
+			
+			<table>
+				
+				<tr>
+					<div class="form-element">
+			
+						<td><label for="email">Email:</label></td>
+				
+						<td><input type="text" name="email" id="email" placeholder="eg. example@email.com"></td>
+				
+					</div>
+				</tr>
+			
+				<tr>
+					<div class="form-element">
+			
+						<td><label for="phone">Telephone:</label></td>
+				
+						<td><input type="text" name="phone" id="phone" placeholder="eg. 0123456789"></td>
+				
+					</div>
+				</tr>
+				
+				<tr>
+					<div class="form-element">
+					
+						<td><label for="firstname">First name:</label></td>
+					
+						<td><input type="text" name="firstname" id="firstname" placeholder="Bradley"></td>
+						
+					</div>
+				</tr>
+				
+				<tr>
+					<div class="form-element">
+					
+						<td><label for="lastname">Last name:</label></td>
+					
+						<td><input type="text" name="lastname" id="lastname" placeholder="Deeming"></td>
+						
+					</div>
+				</tr>
+				
+				<tr>
+					<div class="form-element">
+					
+						<td><label for="lastname">Enquiry:</label></td>
+					
+						<td><textarea name="Enquiry" cols="40" rows="5"></textarea></td>
+						
+					</div>
+				</tr>
+			
+				<tr>
+					<div class="form-element">
+				
+						<td><input type="submit" id="submitButton" value="Sign Up"><td>
+				
+					</div>
+				</tr>
+				
+			</table>
+			
+			<script>
+			
+				function isEmail(email) {
+				
+					var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					
+					return regex.test(email);
+					
+				}
+			
+				$("#submitButton").click(function(){
+				
+					var errorMessage = "";
+					var fieldsMissing = "";
+					
+					if ($("#email").val() == "") {
+					
+						fieldsMissing += "<br>Email";
+						
+					}
+					
+					if ($("#phone").val() == "") {
+					
+						fieldsMissing += "<br>Telephone";
+						
+					}
+					
+					if ($("#firstname").val() == "") {
+					
+						fieldsMissing += "<br>First Name";
+						
+					}
+					
+					if ($("#lastname").val() == "") {
+					
+						fieldsMissing += "<br>Last Name";
+						
+					}
+					
+					if (isEmail($("#email").val()) == false ) {
+					
+						errorMessage += "<p> Your email address is not valid</p>";
+					
+					}
+					
+					if ($.isNumeric($("#phone").val()) == false) {
+						
+						errorMessage += "<p>Your phone number is not numeric</p>"
+						
+					}
+					
+					if (fieldsMissing != "") {
+						
+							errorMessage += "<p>The following field(s) are missing:" + fieldsMissing;
+							
+					}
+					
+					if (errorMessage != "") {
+						
+						$("#errorMessage").html(errorMessage);
+						
+					} 
+					
+					else {
+						
+						$("#successMessage").show();
+						$("#errorMessage").hide();
+						
+					}
+				
+				});
+				
+			</script>
+		
+		</div>
+		
+		<img src="images\aboutus.jpg" class="responsive">
+	
+	<footer>&copy Bradley Deeming 2021</footer>
+	
+	</body>
+	
+	
+	
+</html>
